@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Giphy API</title>
+</head>
+
+<body>
+    <!-- container for giphys -->
+    <div id="gif-images"></div>
+
+    <!-- <button id="searchBtn" type="submit">Search</button> -->
+    <div id="gif-buttons"></div>
+
+    <!-- form for giphy searches -->
+    <form id="giphy-form">
+        <label for="giphy-input">Add a gif</label>
+        <br>
+        <input type="text" id="giphy-input"></input>
+        <br>
+        <!-- button triggers our AJAX call/new giphy to be added -->
+        <input id="add-giphy" type="submit" value="Submit for Gif">
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var topics = ["unicorns", "owls"];
+
+        function getGifs() {
+            var APIKey = "&api_key=TRx57lf35WTrjAlswVtrLeVu8VBLZa9e";
+
+            var gifs = $(this).attr("gif-inpt");
+
+
+            // var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=TRx57lf35WTrjAlswVtrLeVu8VBLZa9e&q=unicorns&limit=30&offset=0&rating=G&lang=en"
+            //https://api.giphy.com/v1/gifs/search?api_key=TRx57lf35WTrjAlswVtrLeVu8VBLZa9e&q=unicorns&limit=30
+
+            var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gifs + "&limit=10" + APIKey;
+
+
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (response) {
+                // console.log(response);
+
+                for (var i = 0; i < response.data.length; i++) {
+
+                    var gifDiv = $("<div class='gifs'>");
+
+                    var rating = response.data[0].rating;
+                    // console.log(rating);
+                    var divRating = $("<p>").text("Rating: " + rating);
+                    gifDiv.append(divRating);
+
+                    var gifURL = response.data[i].images.original.url;
+                    var gifImage = $("<img>").attr("src", gifURL);
+                    gifDiv.append(gifImage);
+
+                    $("#gif-images").prepend(gifDiv);
+
+                }
+
+            });
+
+        }
+
+        function displayGifs() {
+
+            $("#gif-buttons").empty();
+
+            for (var i = 0; i < topics.length; i++) {
+
+                var newBtn = $("<button>");
+                newBtn.addClass("gif-btn");
+                newBtn.attr("gif-inpt", topics[i]);
+                newBtn.text(topics[i]);
+
+                $("#gif-buttons").append(newBtn);
+
+            }
+        }
+
+        $("#add-giphy").on("click", function (event) {
+            event.preventDefault();
+
+            var gif = $("#giphy-input").val().trim();
+            topics.push(gif);
+
+            // console.log(gif);
+            displayGifs();
+
+
+        })
+
+        $(document).on("click", ".gif-btn", getGifs);
+
+        displayGifs();
+    </script>
+
+
+
+    </script>
+
+</body>
+
+</html>
