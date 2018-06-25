@@ -6,24 +6,56 @@
     <title>Giphy API</title>
 
 
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+    <!-- adding css here because external file not being recognized -->
+    <style type="text/css">
+        /* body {
+            /* background: #000000; */
+        /* background-image: url("assets/images/blue.jpg"); */
+        /* color: whitesmoke; */
+        /* font-family: 'Nunito', sans-serif; */
+        /* } */
+
+        body {
+            background: #a3c9f5;
+            background: -webkit-linear-gradient(to right, #0b8793, #a3c9f5);
+            /*Chrome 10-25, Safari 5.1-6*/
+            background: linear-gradient(to right, #0b8793, #a3c9f5);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+            color: whitesmoke;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .gif-btn {
+            /* border: */
+            margin: 5px;
+        }
+
+        .btn-secondary {
+            margin-top: 5px;
+
+            color: #fff;
+            background-color: #222527;
+            /* border-color: #6c757d; */
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="container">
 
-        <div class="row" >
+        <div class="row">
             <div class="col-md-12">
                 <div id="gif-buttons"></div>
             </div>
 
         </div>
 
-        
+
 
         <div class="row">
             <div class="col-lg-8">
@@ -32,17 +64,17 @@
             </div>
 
             <div class="col-lg-4">
-                    <!-- form for giphy searches -->
-                    <form id="giphy-form">
-                        <div class="form-group">
-                            <label for="giphy-input">Add a music artist</label>
-                            <br>
-                            <input type="text" id="giphy-input"></input>
-                            <br>
-                            <!-- button triggers our AJAX call/new giphy to be added -->
-                            <input id="add-giphy" type="submit" value="Search for Gif" class="btn btn-primary"></input>
-                        </div>
-               
+                <!-- form for giphy searches -->
+                <form id="giphy-form">
+                    <div class="form-group">
+                        <label for="giphy-input">Add an Artist</label>
+                        <br>
+                        <input type="text" id="giphy-input"></input>
+                        <br>
+                        <!-- button triggers our AJAX call/new giphy to be added -->
+                        <input id="add-giphy" type="submit" value="Submit" class="btn btn-secondary"></input>
+                    </div>
+
                 </form>
             </div>
 
@@ -50,11 +82,11 @@
         </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="app.js"></script>
 
 
-</div>
+    </div>
 
 
 

@@ -1,4 +1,4 @@
-var topics = [];
+var topics = ['Prince', 'Sade', 'Bob Ross', 'Basquiat', 'Frida Kahlo'];
 var gifURL;
 var gifURL2;
 
@@ -34,14 +34,14 @@ function getGifs() {
             // gifURL.addClass("animate");
             // gifURL.attr("data-sate", "animate");
             var gifImage = $("<img>").attr("src", gifURL);
+
+            gifImage.attr("data-still", gifURL);
+            gifImage.attr("data-animate", gifURL2);
+            gifImage.attr("data-state", "still");
+            gifImage.addClass("image");
+
             gifDiv.append(gifImage);
-
-
             $("#gif-images").prepend(gifDiv);
-
-
-
-
         }
 
     });
@@ -68,7 +68,7 @@ function displayGifs() {
 
         var newBtn = $("<button>");
         newBtn.addClass("gif-btn");
-        newBtn.addClass("btn btn-primary");
+        newBtn.addClass("btn btn-secondary");
         newBtn.attr("gif-inpt", topics[i]);
         newBtn.text(topics[i]);
 
@@ -95,5 +95,15 @@ $("#add-giphy").on("click", function (event) {
 
 
 $(document).on("click", ".gif-btn", getGifs);
+$(document).on("click", ".image", function() {
+    var state = $(this).attr('data-sate');
+    if (state == 'still') {
+        $(this).attr('src', $(this).data('animate'));
+        $(this).attr('data-state', 'animate');
+    } else {
+        $(this).attr('src', $(this).data('still'));
+        $(this).attr('data-state', 'still');
+    }
 
+})
 displayGifs();
