@@ -68,6 +68,7 @@ function displayGifs() {
 
         var newBtn = $("<button>");
         newBtn.addClass("gif-btn");
+        newBtn.addClass("btn btn-primary");
         newBtn.attr("gif-inpt", topics[i]);
         newBtn.text(topics[i]);
 
