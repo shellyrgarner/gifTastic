@@ -1,28 +1,30 @@
 body {
-            background: #a3c9f5;
-            background: -webkit-linear-gradient(to right, #0b8793, #a3c9f5);
-            /*Chrome 10-25, Safari 5.1-6*/
-            background: linear-gradient(to right, #0b8793, #a3c9f5);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
-            color: whitesmoke;
-            font-family: 'Nunito', sans-serif;
-        }
+    background: #a3c9f5;
+    background: -webkit-linear-gradient(to right, #0b8793, #a3c9f5);
+    /*Chrome 10-25, Safari 5.1-6*/
+    background: linear-gradient(to right, #0b8793, #a3c9f5);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+    color: whitesmoke;
+    font-family: 'Nunito', sans-serif;
+}
 
-        .gif-btn {
-            /* border: */
-            margin: 5px;
-        }
+.gif-btn {
+    margin: 5px;
+}
 
-        .btn-secondary {
-            margin-top: 5px;
-            color: #fff;
-            background-color: #222527;
-            /* border-color: #6c757d; */
-        }
+.btn-secondary {
+    margin-top: 5px;
+    color: #fff;
+    background-color: #222527;
+}
         
-        label {
-            color: whitesmoke;
-        }
+label {
+    color: whitesmoke;
+}
+
+p {
+    color: whitesmoke;
+}
 
 
 @media only screen and (max-width: 640px) {
