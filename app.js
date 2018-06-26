@@ -22,12 +22,7 @@ function getGifs() {
 
         for (var i = 0; i < response.data.length; i++) {
 
-            var gifDiv = $("<div class='gifs'>");
-
-            var rating = response.data[i].rating;
-            console.log(response.data);
-            var divRating = $("<p>").text("Rating: " + rating);
-            gifDiv.append(divRating);
+            var gifDiv = $("<div class='gifs'>");            
 
             gifURL2 = response.data[i].images.original.url;
             gifURL = response.data[i].images.original_still.url;
@@ -40,6 +35,12 @@ function getGifs() {
             gifImage.addClass("img");
 
             gifDiv.append(gifImage);
+
+            var rating = response.data[i].rating;
+            console.log(response.data);
+            var divRating = $("<p>").text("Rating: " + rating);
+            gifDiv.append(divRating);
+
             $("#gif-images").prepend(gifDiv);           
         }
     });
@@ -60,7 +61,7 @@ function displayGifs() {
     $("#gif-buttons").empty();
 
     for (var i = 0; i < topics.length; i++) {
-        
+
         var newBtn = $("<button>");
         newBtn.addClass("gif-btn");
         newBtn.addClass("btn btn-secondary");
