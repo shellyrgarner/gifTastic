@@ -26,6 +26,14 @@ p {
     color: whitesmoke;
 }
 
+.container {
+    max-width: 1000px;
+    width: 100%;
+    color: whitesmoke;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 5px;
+
+}
 
 @media only screen and (max-width: 640px) {
 
@@ -41,10 +49,14 @@ p {
         background-color: #222527;
         /* border-color: #6c757d; */
     }
+
+    .container {
+        max-width: 1000px;
+        width: 100%;
   
 }
 
-  @media only screen and (min-width: 641px) and (max-width: 768px)  {
+@media only screen and (min-width: 641px) and (max-width: 768px)  {
   
     .gif-btn {
         /* border: */
@@ -53,29 +65,27 @@ p {
 
     .btn-secondary {
         margin-top: 5px;
-
         color: #fff;
         background-color: #222527;
         /* border-color: #6c757d; */
-    }
- 
-    
+    }    
   } 
   
-  @media only screen and (min-width: 769px) and  (max-width: 980px) { 
+@media only screen and (min-width: 769px) and  (max-width: 980px) { 
 
     .gif-btn {
-        /* border: */
+
         margin: 5px;
     }
 
     .btn-secondary {
         margin-top: 5px;
-
         color: #fff;
         background-color: #222527;
-        /* border-color: #6c757d; */
+
     }
- 
- 
-  }
+    .container {
+        max-width: 1000px;
+        width: 100%;
+    } 
+}}
