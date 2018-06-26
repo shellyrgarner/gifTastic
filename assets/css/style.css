@@ -35,6 +35,11 @@ p {
 
 }
 
+.img {
+    max-width: 1000px;
+    width: 100%;
+}
+
 @media only screen and (max-width: 640px) {
 
     .gif-btn {
@@ -53,7 +58,11 @@ p {
     .container {
         max-width: 1000px;
         width: 100%;
-  
+ }
+ .img {
+    max-width: 1000px;
+    width: 100%;
+}
 }
 
 @media only screen and (min-width: 641px) and (max-width: 768px)  {
@@ -68,7 +77,12 @@ p {
         color: #fff;
         background-color: #222527;
         /* border-color: #6c757d; */
-    }    
+    }   
+    
+    .img {
+        max-width: 1000px;
+        width: 100%;
+    }
   } 
   
 @media only screen and (min-width: 769px) and  (max-width: 980px) { 
@@ -84,8 +98,12 @@ p {
         background-color: #222527;
 
     }
-    .container {
+    /* .container {
         max-width: 1000px;
         width: 100%;
-    } 
-}}
+    }  */
+    .img {
+        max-width: 1000px;
+        width: 100%;
+    }
+}

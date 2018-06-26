@@ -7,12 +7,7 @@ function getGifs() {
 
     var gifs = $(this).attr("gif-inpt");
 
-
-    // var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=TRx57lf35WTrjAlswVtrLeVu8VBLZa9e&q=unicorns&limit=30&offset=0&rating=G&lang=en"
-    //https://api.giphy.com/v1/gifs/search?api_key=TRx57lf35WTrjAlswVtrLeVu8VBLZa9e&q=unicorns&limit=30
-
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifs + "&limit=10" + APIKey;
-
 
     $.ajax({
         url: queryURL,
@@ -22,7 +17,7 @@ function getGifs() {
 
         for (var i = 0; i < response.data.length; i++) {
 
-            var gifDiv = $("<div class='gifs'>");            
+            var gifDiv = $("<div class='gifs'>");                
 
             gifURL2 = response.data[i].images.original.url;
             gifURL = response.data[i].images.original_still.url;
@@ -45,7 +40,7 @@ function getGifs() {
         }
     });
 }
-
+//logic to pause/play gifs
 $(document).on("click", ".img", function () {
     var state = $(this).attr("data-state");
     if (state == "still") {
@@ -81,6 +76,8 @@ $("#add-giphy").on("click", function (event) {
 
     // console.log(gif);
     displayGifs();
+    
+    $("#giphy-input").val(""); //clear the input box
 })
 
 $(document).on("click", ".gif-btn", getGifs);
