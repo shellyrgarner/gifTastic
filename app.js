@@ -11,7 +11,7 @@ function getGifs() {
     // var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=TRx57lf35WTrjAlswVtrLeVu8VBLZa9e&q=unicorns&limit=30&offset=0&rating=G&lang=en"
     //https://api.giphy.com/v1/gifs/search?api_key=TRx57lf35WTrjAlswVtrLeVu8VBLZa9e&q=unicorns&limit=30
 
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gifs + "&limit=10" + APIKey;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifs + "&limit=10" + APIKey;
 
 
     $.ajax({
